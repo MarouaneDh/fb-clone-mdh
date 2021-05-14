@@ -31,15 +31,15 @@ export default function Topbar() {
         <div className="topbarIcons">
           <div className="topbarIconItem">
             <Person />
-            <span className="topbarIconBadge">1</span>
-          </div>
-          <div className="topbarIconItem">
-            <Chat />
             <span className="topbarIconBadge">2</span>
           </div>
           <div className="topbarIconItem">
+            <Chat />
+            <span className="topbarIconBadge">5</span>
+          </div>
+          <div className="topbarIconItem">
             <Notifications />
-            <span className="topbarIconBadge">1</span>
+            <span className="topbarIconBadge">8</span>
           </div>
         </div>
         <Link to={`/profile/${user.username}`}>
