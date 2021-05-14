@@ -49,9 +49,8 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 
-app.listen(8800, () => {
-  console.log("Backend server is running!");
-});
+const PORT = process.env.PORT || 8800;
+app.listen(PORT);
 
 // serve static assets if in production
 if (process.env.NODE_ENV === "production") {
