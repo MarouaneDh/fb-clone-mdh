@@ -3,6 +3,7 @@ import "./login.css";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@material-ui/core";
+import {Link} from "react-router-dom"
 
 export default function Login() {
   const email = useRef();
@@ -55,7 +56,9 @@ export default function Login() {
               {isFetching ? (
                 <CircularProgress color="white" size="20px" />
               ) : (
-                "Create a New Account"
+                <Link to="/" style={{textDecoration:"none",color:"white"}}>
+                Create a New Account
+                </Link>
               )}
             </button>
           </form>

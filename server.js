@@ -49,6 +49,15 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 
+app.get("/", (req, res) => {
+  res
+    .set(
+      "Content-Security-Policy",
+      "default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'"
+    )
+    .send("<html><head></head><body></body></html>");
+});
+
 const PORT = process.env.PORT || 8800;
 app.listen(PORT);
 
