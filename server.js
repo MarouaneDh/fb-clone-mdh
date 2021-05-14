@@ -13,6 +13,11 @@ const path = require("path");
 
 dotenv.config();
 
+const PORT = process.env.PORT || 8800;
+app.listen(process.env.PORT || PORT, function () {
+  console.log("listening on :" + PORT);
+});
+
 mongoose.connect(
   process.env.MONGO_URL,
   { useNewUrlParser: true, useUnifiedTopology: true },
@@ -57,9 +62,6 @@ app.get("/", (req, res) => {
     )
     .send("<html><head></head><body></body></html>");
 });
-
-const PORT = process.env.PORT || 8800;
-app.listen(PORT);
 
 // serve static assets if in production
 if (process.env.NODE_ENV === "production") {
